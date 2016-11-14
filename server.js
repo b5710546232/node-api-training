@@ -3,9 +3,10 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const User = require('./app/models/user');
+const cors = require('cors'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cor())
 const PORT = process.env.PORT || 8080
 
 const mongoose   = require('mongoose');
