@@ -18,6 +18,6 @@ router.get('/',(req,res)=>{
 // Register routes
 app.use('/api',router)
 
-app.listen(port,()=>{
-  console.log('Server start @ port'+port);
+app.listen(PORT,()=>{
+  console.log('Server start @ port'+PORT);
 })
