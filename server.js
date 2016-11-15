@@ -4,13 +4,18 @@ const app = express()
 const bodyParser = require('body-parser')
 const User = require('./app/models/user');
 const cors = require('cors')
+const mongoose   = require('mongoose');
+const config = require('./config')
+var jwt    = require('jsonwebtoken')
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors());
 const PORT = process.env.PORT || 8080
 
-const mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/myDB');
+
+mongoose.connect(config.database);
 
 // ROUTES FOR API
 //
